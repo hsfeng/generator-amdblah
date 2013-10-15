@@ -1,7 +1,7 @@
 {
   "name": "generator-amdblah",
   "version": "0.0.1",
-  "description": "generator for starting a project with Express, RequireJS, Backbone.js + Handlebars both on server and client side, i18next, Moment.js and Bootstrap.",
+  "description": "Generator for starting a project with Express, RequireJS, Backbone.js + Handlebars both on server and client side, i18next, Moment.js and Bootstrap.",
   "keywords": [
     "yeoman-generator",
     "Handlebars",
@@ -12,12 +12,10 @@
     "Backbone.js"
   ],
   "homepage": "https://github.com/hsfeng/generator-amdblah",
-  "bugs": "https://github.com/hsfeng/generator-amdblah/issues",
-  "author": {
-    "name": "hsfeng",
-    "email": "hsfeng@gmail.com",
-    "url": "https://github.com/hsfeng"
+  "bugs": {
+    "url": "https://github.com/hsfeng/generator-amdblah/issues"
   },
+  "author": "hsfeng <hsfeng@gmail.com> (https://github.com/hsfeng)",
   "main": "app/index.js",
   "repository": {
     "type": "git",
@@ -43,5 +41,9 @@
     {
       "type": "MIT"
     }
-  ]
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT"
 }
