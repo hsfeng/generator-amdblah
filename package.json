@@ -1,0 +1,47 @@
+{
+  "name": "generator-amdblah",
+  "version": "0.0.1",
+  "description": "A generator for Yeoman to use with express, RequireJS, Handlebars both on server and client side, Backbone.js, i18next, Moment.js and Bootstrap",
+  "keywords": [
+    "yeoman-generator",
+    "Handlebars",
+    "helpers",
+    "server and client",
+    "nodejs and browser",
+    "requirejs",
+    "Backbone.js"
+  ],
+  "homepage": "https://github.com/hsfeng/generator-amdblah",
+  "bugs": "https://github.com/hsfeng/generator-amdblah/issues",
+  "author": {
+    "name": "hsfeng",
+    "email": "hsfeng@gmail.com",
+    "url": "https://github.com/hsfeng"
+  },
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hsfeng/generator-amdblah.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.13.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.12.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}

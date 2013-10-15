@@ -1,0 +1,36 @@
+{
+  "name": "<%= _.slugify(appName) %>",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "requirejs": "~2.1.6",
+    "requirejs-domready": "~2.0.1",
+    "requirejs-text": "~2.0.7",
+    "backbone": "~1.0.0",
+    "underscore-amd": "~1.4.4",
+    "underscore.string": "~2.3.1",
+    "modernizr": "~2.6.2",
+    "less.js": "~1.4.2",
+    "bootstrap": "~2.3.2",
+    "hbs": "https://github.com/azamara/require-handlebars-plugin.git#~0.4.1",
+    "moment": "~2.2.1",
+    "log4javascript": "~1.4.5",
+    "backbone-super": "~1.0.0",
+    "i18next": "~1.7.1",
+    "amdblah-hbs-helpers" : "~0.0.1"
+  },
+  "devDependencies": {},
+  "exportsOverride": {
+    "requirejs": {
+      "js": "require.js"
+    },
+    "bootstrap": {
+      "css": "docs/assets/css/bootstrap*.css",
+      "css/../img": "img"
+    },
+    "moment": {
+      "js": "lang/*.js"
+    },
+    "*": {}
+  }
+}
