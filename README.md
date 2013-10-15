@@ -35,7 +35,7 @@ Finally, initiate the generator:
 $ yo amdblah
 ```
 
-### Run Appliction
+### Run Application
 
 Launch the application
 
