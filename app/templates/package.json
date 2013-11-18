@@ -8,8 +8,8 @@
     "moment": "~2.1.0",
     "underscore": "~1.5.2",
     "require-all": "0.0.8",
-    "backbone": "~1.0.0",
-    "backbone.layoutmanager": "~0.9.3",
+    "backbone": "1.1.0",
+    "backbone.layoutmanager": "0.9.4",
     "express3-handlebars": "~0.5.0",
     "amdblah-hbs-helpers": "~0.0.1"
   },
