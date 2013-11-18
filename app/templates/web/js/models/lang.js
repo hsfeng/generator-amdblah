@@ -36,11 +36,13 @@ define(['jquery', 'underscore', 'backbone', 'i18next', 'moment'], function($, _,
 		applyTimestamp : function() {
 			$('[data-i18n-timestamp]').each(function(t, b) {
 				var objectTime = $(this).data('i18n-timestamp'), fromNow = $(this).data('i18n-fromnow'), dateFormat;
-				if (!_.isUndefined(fromNow) && fromNow) {
-					$(this).html(moment(objectTime).fromNow());
-				} else {
-					dateFormat = $(this).data('i18n-dateformat');
-					$(this).html(moment(new Date(objectTime)).format(dateFormat));
+				if(_.isNumber(objectTime)){
+					if (!_.isUndefined(fromNow) && fromNow) {
+						$(this).html(moment(objectTime).fromNow());
+					} else {
+						dateFormat = $(this).data('i18n-dateformat');
+						$(this).html(moment(new Date(objectTime)).format(dateFormat));
+					}
 				}
 			});
 		},
