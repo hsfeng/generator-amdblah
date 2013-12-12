@@ -4,8 +4,6 @@ var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
 
-var rjsOptions = require('./r.build');
-
 module.exports = function (grunt) {
     // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
@@ -17,6 +15,8 @@ module.exports = function (grunt) {
         dist: 'public',
         server : 'app'
     };
+    
+    var rjsOptions = require('./r.build')(yeomanConfig);
 
     grunt.initConfig({
     	pkg: grunt.file.readJSON('package.json'),
