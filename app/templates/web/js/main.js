@@ -7,9 +7,6 @@ require.config({
 		'modernizr' : '../bower_components/modernizr/modernizr',
 		'templates' : '../templates',
 		'hbs' : '../bower_components/hbs/hbs',
-		'Handlebars' : '../bower_components/hbs/Handlebars',
-		'i18nprecompile' : '../bower_components/hbs/hbs/i18nprecompile',
-		'json2' : '../bower_components/hbs/hbs/json2',
 		'hbs.helpers' : '../bower_components/amdblah-hbs-helpers/dist',
 		'text' : '../bower_components/requirejs-text/text',
 		'domready' : '../bower_components/requirejs-domready/domReady',
@@ -45,8 +42,8 @@ require.config({
 		templateExtension : 'html',
 		// if disableI18n is `true` it won't load locales and the i18n helper
 		// won't work as well.
-		disableI18n : true,
-		disableHelpers : false,
+		i18n : false,
+		helpers : true,
 		helperDirectory : 'hbs.helpers/'
 	}
 });

@@ -1,6 +1,6 @@
 {
   "name": "<%= _.slugify(appName) %>",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "dependencies": {
     "jquery": "~2.0.3",
     "requirejs": "~2.1.6",
@@ -12,12 +12,12 @@
     "modernizr": "~2.6.2",
     "less.js": "~1.4.2",
     "bootstrap": "~2.3.2",
-    "hbs": "https://github.com/azamara/require-handlebars-plugin.git#~0.4.1",
+    "hbs": "0.7.0",
     "moment": "~2.2.1",
     "log4javascript": "~1.4.5",
     "backbone-super": "~1.0.0",
     "i18next": "~1.7.1",
-    "amdblah-hbs-helpers" : "~0.0.1"
+    "amdblah-hbs-helpers" : "~0.1.0"
   },
   "devDependencies": {},
   "exportsOverride": {
