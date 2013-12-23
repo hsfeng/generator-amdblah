@@ -32,9 +32,14 @@ define(['jquery', 'underscore', 'backbone', 'log4javascript'], function($, _, Ba
 	});
 	initialize = function() {
 		new AppRouter();
+		
+		var pathParts = window.location.pathname.split("/");
+		pathParts = pathParts.slice(0,pathParts.length-1);
 		Backbone.history.start({
+			root : pathParts.join('/'),
 			pushState : true
 		});
+		
 
 		// All navigation that is relative should be passed through the navigate
 		// method, to be processed by the router. If the link has a `data-bypass`
