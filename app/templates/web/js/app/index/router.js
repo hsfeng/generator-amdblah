@@ -1,6 +1,7 @@
-define(['jquery', 'underscore', 'backbone', 'log4javascript'], function($, _, Backbone, log4javascript) {'use strict';
+define(['jquery', 'underscore', 'backbone', 'module'], function($, _, Backbone, module) {'use strict';
 
 	var AppRouter, initialize;
+
 	AppRouter = Backbone.Router.extend({
 
 		routes : {
@@ -11,35 +12,38 @@ define(['jquery', 'underscore', 'backbone', 'log4javascript'], function($, _, Ba
 		},
 
 		initialize : function(options) {
-
+			console.log('init index router');
 		},
-		
-		welcome : function(){
+
+		welcome : function() {
+			console.log('route welcome');
 			require(['views/index'], function(IndexView) {
 				new IndexView();
 			});
 		},
 
 		defaultAction : function(actions) {
-			var logger = log4javascript.getRootLogger(), consoleAppender = new log4javascript.BrowserConsoleAppender(), patternLayout = new log4javascript.PatternLayout('%d{HH:mm:ss} %-5p -[%c] %m');
-			consoleAppender.setLayout(patternLayout);
-			logger.addAppender(consoleAppender);
-			logger.info('hello index router');
-			this.navigate('welcome', {
-				trigger : true
+			console.log('route default');
+			Backbone.history.navigate('welcome', {
+				trigger : true,
+				replace : true
 			});
 		}
 	});
 	initialize = function() {
 		new AppRouter();
-		
-		var pathParts = window.location.pathname.split("/");
-		pathParts = pathParts.slice(0,pathParts.length-1);
+
+		var pushState = false, pathParts = window.location.pathname.split('/');
+		pathParts = pathParts.slice(0, pathParts.length - 1);
+
+		if ('true' === module.config().pushState) {
+			pushState = true;
+		}
+
 		Backbone.history.start({
 			root : pathParts.join('/'),
-			pushState : true
+			pushState : pushState
 		});
-		
 
 		// All navigation that is relative should be passed through the navigate
 		// method, to be processed by the router. If the link has a `data-bypass`

@@ -6,18 +6,19 @@ require.config({
 		'underscore' : '../bower_components/underscore-amd/underscore',
 		'modernizr' : '../bower_components/modernizr/modernizr',
 		'templates' : '../templates',
+		'styles' : '../css',
+		'bower' : '../bower_components',
 		'hbs' : '../bower_components/hbs/hbs',
 		'hbs.helpers' : '../bower_components/amdblah-hbs-helpers/dist',
 		'text' : '../bower_components/requirejs-text/text',
 		'domready' : '../bower_components/requirejs-domready/domReady',
 		'underscore.string' : '../bower_components/underscore.string/dist/underscore.string.min',
 		'backbone.super' : '../bower_components/backbone-super/backbone-super/backbone-super-min',
-		'bootstrap' : '../bower_components/bootstrap/docs/assets/js/bootstrap',
-		'log4javascript' : '../bower_components/log4javascript/log4javascript',
+		'bootstrap' : '../bower_components/bootstrap/dist/js/bootstrap',
 		'jquery.migrate' : '../bower_components/jquery/jquery-migrate',
 		'moment' : '../bower_components/moment/min/moment.min',
 		'moment.langs' : 'libs/vendor/moment',
-		'i18next' : '../bower_components/i18next/release/i18next.amd.withJQuery-1.6.3.min'
+		'i18next' : '../bower_components/i18next/release/i18next.amd.withJQuery-1.7.1.min'
 	},
 
 	shim : {
@@ -31,10 +32,13 @@ require.config({
 		'underscore.string' : ['underscore'],
 		'backbone.super' : ['backbone'],
 		'bootstrap' : ['jquery'],
-		'jquery.migrate' : ['jquery'],
-		'log4javascript' : {
-			deps : ['jquery'],
-			exports : 'log4javascript'
+		'jquery.migrate' : ['jquery']
+	},
+
+	map : {
+		'*' : {
+			'css' : 'bower/require-css/css', // or whatever the path to require-css is
+			'less' : 'bower/require-less/less' // path to less
 		}
 	},
 
@@ -48,12 +52,12 @@ require.config({
 	}
 });
 
-require(['jquery', 'underscore', 'backbone', 'domready', 'i18next', 'moment', 'modernizr', 'underscore.string', 'jquery.migrate', 'bootstrap', 'log4javascript'], function($, _, Backbone, domReady) {'use strict';
+require(['jquery', 'underscore', 'backbone', 'domready', 'i18next', 'moment', 'modernizr', 'underscore.string', 'jquery.migrate', 'bootstrap'], function($, _, Backbone, domReady) {'use strict';
 	domReady(function() {
 		//init underscore.string
 		_.mixin(_.str.exports());
 		_.str.include('Underscore.string', 'string');
-		
+
 		// the startmodule is defined on the same script tag of data-main.
 		// example: <script data-main="main.js" data-start="pagemodule/main" src="vendor/require.js"/>
 		var startName = $('script[data-main][data-start]').attr('data-start');

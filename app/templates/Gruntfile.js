@@ -81,14 +81,14 @@ module.exports = function (grunt) {
             }
         },
         clean: {
-            dist: ['<%= yeoman.dist %>','jslint.log','<%= yeoman.server %>/templates/'],
+            dist: ['<%= yeoman.dist %>'],
             optimized : {
 				expand : true,
 				cwd: '<%= yeoman.dist %>',
-				src : ['bower_components', 'templates','build.txt','js/*.*','!js/main.js',
+				src : ['bower_components','build.txt','js/*.*','!js/main.js',
 					'js/libs/{,*/}*', '!js/libs/vendor/**',
 					'js/app/{,*/}*' ,'!js/app/*.js',
-					'js/views/{,*/}*' ,//'!js/views/*.js',
+					'js/views/{,*/}*' ,'!js/views/*.js',
 					'js/models',
 					'css/**/*.less']
 			},
@@ -106,36 +106,9 @@ module.exports = function (grunt) {
 			server : {
 		    	expand : true,
 				cwd: '.',
-				src : ['app.js','app/**/*.js','!app/templates/**/*.js']
+				src : ['app.js','app/**/*.js']
 			}
         },
-        jslint : {// configure the task
-        	client : {
-				src : ['<%= yeoman.app %>/js/**/*.js'],
-				exclude : ['<%= yeoman.app %>/js/libs/vendor/**/*.js','<%= yeoman.app %>/js/libs/qnap/pl.js'],
-				directives : {// example directives
-					white : true,
-					nomen : true,
-					unparam: true,
-					noempty : true,
-					predef : [// array of pre-defined globals
-					'window', 'define', 'require']
-				}
-			},
-			server : {
-				src : ['app.js','app/**/*.js'],
-				exclude : [],
-				directives : {// example directives
-					white : true,
-					nomen : true,
-					unparam: true,
-					noempty : true,
-					predef : [// array of pre-defined globals
-					'global', 'process', 'console', 'require','__filename','__dirname','module','exports', 
-					'setTimeout', 'clearTimeout', 'setInterval','clearInterval']
-				}
-			}
-		},
         mocha: {
             all: {
                 options: {
@@ -214,7 +187,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.dist %>',
-                    src: '*.html',
+                    src: '**/*.html',
                     dest: '<%= yeoman.dist %>'
                 }]
             }
@@ -273,25 +246,6 @@ module.exports = function (grunt) {
 		    cwd: '<%= yeoman.dist %>',
 		    src: ['**/*','!**/.svn']
 		  }
-		},
-		handlebars: {
-		  compile: {
-		    options: {
-		      namespace: false,
-		      commonjs : true,
-		      processName: function(filePath) {
-		      		if(filePath === (yeomanConfig.dist + '/index.html')){
-		      			filePath = yeomanConfig.app + '/templates/../index.html';
-		      		}
-			      	return filePath;
-  			  }
-		    },
-		    
-		    files: {
-		    	"<%= yeoman.server %>/templates/all.js": ["<%= yeoman.app %>/templates/**/*.html", '<%= yeoman.dist %>/index.html']
-		    }
-		   
-		  }
 		}
     });
     
@@ -327,12 +281,10 @@ module.exports = function (grunt) {
         'requirejs',
         'less:production',
         'clean:optimized',
-        'svninfo',
         'processhtml:dist',
         'htmlmin:dist',
         'cssmin:minify',
-        'imagemin',
-        'handlebars'
+        'imagemin'
     ]);
     
     grunt.registerTask('default', [

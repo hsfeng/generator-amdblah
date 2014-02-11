@@ -19,7 +19,7 @@ $ npm install
 Install and layout bower packages
 
 ```shell
-$ grunt bower-in
+$ grunt bower-install
 ```
 
 Launch the demo application

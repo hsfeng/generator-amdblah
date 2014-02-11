@@ -2,22 +2,23 @@
   "name": "<%= _.slugify(appName) %>",
   "version": "0.0.0",
   "dependencies": {
-    "jquery": "~2.0.3",
-    "requirejs": "~2.1.6",
+    "jquery": "~2.1.0",
+    "requirejs": "~2.1.9",
     "requirejs-domready": "~2.0.1",
     "requirejs-text": "~2.0.7",
-    "backbone": "~1.0.0",
-    "underscore-amd": "~1.4.4",
+    "backbone": "~1.1.0",
+    "underscore-amd": "~1.5.2",
     "underscore.string": "~2.3.1",
-    "modernizr": "~2.6.2",
-    "less.js": "~1.4.2",
-    "bootstrap": "~2.3.2",
+    "modernizr": "~2.7.1",
+    "less.js": "~1.6.1",
+    "bootstrap": "~3.1.0",
     "hbs": "0.7.0",
-    "moment": "~2.2.1",
-    "log4javascript": "~1.4.5",
+    "moment": "~2.5.0",
     "backbone-super": "~1.0.0",
     "i18next": "~1.7.1",
-    "amdblah-hbs-helpers" : "~0.1.0"
+    "amdblah-hbs-helpers": "~0.1.1",
+    "require-css": "~0.1.1",
+    "require-less": "~0.1.1"
   },
   "devDependencies": {},
   "exportsOverride": {
@@ -25,8 +26,8 @@
       "js": "require.js"
     },
     "bootstrap": {
-      "css": "docs/assets/css/bootstrap*.css",
-      "css/../img": "img"
+      "css": "dist/css/bootstrap*.min.css",
+      "css/../fonts": "dist/fonts/*"
     },
     "moment": {
       "js": "lang/*.js"

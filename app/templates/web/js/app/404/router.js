@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone','log4javascript'], function($, _, Backbone,log4javascript) {'use strict';
+define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {'use strict';
 
 	var AppRouter, initialize;
 	AppRouter = Backbone.Router.extend({
@@ -10,15 +10,11 @@ define(['jquery', 'underscore', 'backbone','log4javascript'], function($, _, Bac
 		},
 
 		initialize : function(options) {
+			console.log('init 404 router');
 		},
 
 		defaultAction : function(actions) {
-			var logger = log4javascript.getRootLogger(),
-				consoleAppender = new log4javascript.BrowserConsoleAppender(),
-				patternLayout = new log4javascript.PatternLayout('%d{HH:mm:ss} %-5p -[%c] %m');
-			consoleAppender.setLayout(patternLayout);
-			logger.addAppender(consoleAppender);
-			logger.info('hello 404 router');
+			console.log('route default');
 		}
 	});
 	initialize = function() {

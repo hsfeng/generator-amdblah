@@ -8,7 +8,7 @@ module.exports = function(yeoman){
 		optimize : 'uglify',
 		optimizeCss : 'none',
 		optimizeAllPluginResources : false,
-		findNestedDependencies : true,
+		findNestedDependencies : false,
 		// TODO: Figure out how to make sourcemaps work with grunt-usemin
 		// https://github.com/yeoman/grunt-usemin/issues/30
 		//generateSourceMaps: true,
@@ -35,19 +35,25 @@ module.exports = function(yeoman){
 		modules : [
 		{ 
 			name : 'main',
-			include : ['models/lang']
+			include : 'models/lang',
 		},
 		{
 			name : "app/index",
-			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'jquery.migrate', 'bootstrap','log4javascript','models/lang']
-		}, {
+			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'jquery.migrate', 'bootstrap']
+		}, 
+		{
+			name : "views/index",
+			include: ["css"],
+			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'jquery.migrate', 'bootstrap']
+		}, 
+		{
 			name : "app/404",
-			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'jquery.migrate', 'bootstrap','log4javascript','models/lang']
+			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'jquery.migrate', 'bootstrap']
 		}
 		/*
 		,{
 			name : "app/yourapp",
-			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'jquery.migrate', 'bootstrap','log4javascript']
+			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'jquery.migrate', 'bootstrap']
 		}
 		*/
 		]

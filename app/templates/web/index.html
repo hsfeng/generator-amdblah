@@ -13,11 +13,12 @@
         
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-		<link rel="stylesheet" href="css/libs/vendor/bootstrap/bootstrap.css">
+		<link rel="stylesheet" href="css/libs/vendor/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="css/libs/vendor/bootstrap/bootstrap-theme.min.css">
 		
 		<!-- build:css css/main.css -->
 		<link rel="stylesheet/less" href="css/main.less">
-		<script src="bower_components/less.js/dist/less-1.4.2.min.js"></script>
+		<script src="bower_components/less.js/dist/less-1.6.1.min.js"></script>
 		<!-- /build -->
 		
 	</head>
@@ -28,7 +29,8 @@
         
         <!-- Add your site or application content here -->
         
-		<div class="container">
+		<div class="container" data-rendered="{{rendered}}">
+			{{{body}}}
         </div>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -39,11 +41,26 @@
 					s.parentNode.insertBefore(g, s);
 				}(document, 'script'));
 		</script>
+		
+		<!-- build:remove -->
+		<script type="text/javascript">
+			var require = {
+				config : {
+					'app/index/router' : {
+						pushState : '{{pushState}}'
+					},
+				}
+			};
+		</script>
+		<!-- /build -->
 
 		<!-- build:template
 		<script type="text/javascript">
 			var require = {
 				config : {
+					'app/index/router' : {
+						pushState : '{{pushState}}'
+					},
 					'views/index':{
 						hello : 'world'
 					}
