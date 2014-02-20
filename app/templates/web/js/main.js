@@ -1,12 +1,11 @@
 require.config({
 	baseUrl : 'js',
 	paths : {
-		'jquery' : '../bower_components/jquery/jquery',
+		'jquery' : '../bower_components/jquery/dist/jquery',
 		'backbone' : '../bower_components/backbone/backbone',
 		'underscore' : '../bower_components/underscore-amd/underscore',
 		'modernizr' : '../bower_components/modernizr/modernizr',
 		'templates' : '../templates',
-		'styles' : '../css',
 		'bower' : '../bower_components',
 		'hbs' : '../bower_components/hbs/hbs',
 		'hbs.helpers' : '../bower_components/amdblah-hbs-helpers/dist',
@@ -15,10 +14,9 @@ require.config({
 		'underscore.string' : '../bower_components/underscore.string/dist/underscore.string.min',
 		'backbone.super' : '../bower_components/backbone-super/backbone-super/backbone-super-min',
 		'bootstrap' : '../bower_components/bootstrap/dist/js/bootstrap',
-		'jquery.migrate' : '../bower_components/jquery/jquery-migrate',
 		'moment' : '../bower_components/moment/min/moment.min',
 		'moment.langs' : 'libs/vendor/moment',
-		'i18next' : '../bower_components/i18next/release/i18next.amd.withJQuery-1.7.1.min'
+		'i18next' : '../bower_components/i18next/i18next.amd.withJQuery.min'
 	},
 
 	shim : {
@@ -31,15 +29,7 @@ require.config({
 		},
 		'underscore.string' : ['underscore'],
 		'backbone.super' : ['backbone'],
-		'bootstrap' : ['jquery'],
-		'jquery.migrate' : ['jquery']
-	},
-
-	map : {
-		'*' : {
-			'css' : 'bower/require-css/css', // or whatever the path to require-css is
-			'less' : 'bower/require-less/less' // path to less
-		}
+		'bootstrap' : ['jquery']
 	},
 
 	'hbs' : {
@@ -48,11 +38,12 @@ require.config({
 		// won't work as well.
 		i18n : false,
 		helpers : true,
-		helperDirectory : 'hbs.helpers/'
+		helperDirectory : 'hbs.helpers/',
+		partialsUrl : 'templates/'
 	}
 });
 
-require(['jquery', 'underscore', 'backbone', 'domready', 'i18next', 'moment', 'modernizr', 'underscore.string', 'jquery.migrate', 'bootstrap'], function($, _, Backbone, domReady) {'use strict';
+require(['jquery', 'underscore', 'backbone', 'domready', 'i18next', 'moment', 'modernizr', 'underscore.string', 'bootstrap'], function($, _, Backbone, domReady) {'use strict';
 	domReady(function() {
 		//init underscore.string
 		_.mixin(_.str.exports());

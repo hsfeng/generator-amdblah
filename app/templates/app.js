@@ -14,7 +14,7 @@ var _ = require('underscore'),
 	app = express(),
 	hbs,
 	htdocs = 'web',
-	templateDir = 'web/templates',
+	templateDir = 'web/templates/',
 	helpers = require('amdblah-hbs-helpers');
 
 

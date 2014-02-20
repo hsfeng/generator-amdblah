@@ -39,16 +39,15 @@ module.exports = function(yeoman){
 		},
 		{
 			name : "app/index",
-			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'jquery.migrate', 'bootstrap']
+			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'bootstrap']
 		}, 
 		{
 			name : "views/index",
-			include: ["css"],
-			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'jquery.migrate', 'bootstrap']
+			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'bootstrap']
 		}, 
 		{
 			name : "app/404",
-			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'jquery.migrate', 'bootstrap']
+			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'bootstrap']
 		}
 		/*
 		,{

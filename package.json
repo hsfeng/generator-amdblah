@@ -1,6 +1,6 @@
 {
   "name": "generator-amdblah",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Generator for starting a project with Express, RequireJS, Backbone.js + Handlebars both on server and client side, i18next, Moment.js and Bootstrap.",
   "keywords": [
     "yeoman-generator",
