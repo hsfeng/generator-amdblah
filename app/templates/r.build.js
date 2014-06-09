@@ -30,12 +30,16 @@ module.exports = function(yeoman){
 			// removes i18n precompiler, handlebars and json2
 			excludeAfterBuild : true
 		},
+		
+		paths: {
+	    	requireLib: '../bower_components/requirejs/require'
+	    },
 	
 		mainConfigFile : yeoman.app + '/js/main.js',
 		modules : [
 		{ 
 			name : 'main',
-			include : 'models/lang',
+			include :  ['requireLib','models/lang'],
 		},
 		{
 			name : "app/index",

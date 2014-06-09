@@ -16,10 +16,13 @@
 		<link rel="stylesheet" href="css/libs/vendor/bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="css/libs/vendor/bootstrap/bootstrap-theme.min.css">
 		
-		<!-- build:css css/main.css -->
+		<!-- build:remove -->
 		<link rel="stylesheet/less" href="css/main.less">
 		<script src="bower_components/less.js/dist/less-1.6.1.min.js"></script>
 		<!-- /build -->
+		<!-- build:template
+		<link rel="stylesheet" href="css/main.css?v=<%= version %>">
+		/build -->
 		
 	</head>
 	<body>
@@ -63,14 +66,20 @@
 					},
 					'views/index':{
 						hello : 'world'
+					},
+					'models/lang':{
+						cacheBuster : '<%= version %>'
 					}
 				},
 				urlArgs : "v=<%= version %>"
 			};
 		</script>
 		/build -->
-		<!-- build:[src] js/libs/vendor/requirejs/require.js -->
+		<!-- build:remove -->
 		<script data-main="js/main" data-start="app/index" type="text/javascript" src="bower_components/requirejs/require.js"></script>
 		<!-- /build -->
+		<!-- build:template
+		<script data-start="app/index" type="text/javascript" src="js/main.js?v=<%= version %>"></script>
+		/build -->
 	</body>
 </html>

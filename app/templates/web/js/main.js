@@ -51,7 +51,7 @@ require(['jquery', 'underscore', 'backbone', 'domready', 'i18next', 'moment', 'm
 
 		// the startmodule is defined on the same script tag of data-main.
 		// example: <script data-main="main.js" data-start="pagemodule/main" src="vendor/require.js"/>
-		var startName = $('script[data-main][data-start]').attr('data-start');
+		var startName = $('script[data-start]').attr('data-start');
 		if (startName) {
 			require([startName, 'models/lang'], function(startModule, lang) {
 				$(function() {

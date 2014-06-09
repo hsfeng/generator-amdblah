@@ -147,7 +147,7 @@ module.exports = function (grunt) {
         processhtml: {
 		    options: {
 		      data: {
-		        version: '1.0.0.<%= svninfo.last.rev %>',
+		        version: '1.0.0.<%= gitinfo.local.branch.current.shortSHA %>',
 		      }
 		    },
 		    dist: {
@@ -204,10 +204,13 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        svninfo : {
-        	force : true,
-        	'last' : {
-        		'rev' : new Date().getTime()
+        gitinfo : {
+        	'local' : {
+        		'branch' : {
+        			'current' : {
+        				'shortSHA' : new Date().getTime()
+        			}
+        		}
         	}
         },
         bower : {
@@ -235,17 +238,6 @@ module.exports = function (grunt) {
 					verbose : true
 				}
 			}
-		},
-		compress: {
-		  main: {
-		    options: {
-		      mode : "zip",
-		      archive: 'qcanvas-r<%= svninfo.last.rev %>.war' 
-		    },
-		    expand: true,
-		    cwd: '<%= yeoman.dist %>',
-		    src: ['**/*','!**/.svn']
-		  }
 		}
     });
     
@@ -281,6 +273,7 @@ module.exports = function (grunt) {
         'requirejs',
         'less:production',
         'clean:optimized',
+        /*'gitinfo',*/
         'processhtml:dist',
         'htmlmin:dist',
         'cssmin:minify',

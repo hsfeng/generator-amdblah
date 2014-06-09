@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'i18next', 'moment'], function($, _, Backbone, i18next, moment) {'use strict';
+define(['jquery', 'underscore', 'backbone', 'module', 'i18next', 'moment'], function($, _, Backbone, module, i18next, moment) {'use strict';
 	var lang, LangModel = Backbone.Model.extend({
 		defaults : {
 			appName : 'messages',
@@ -6,7 +6,9 @@ define(['jquery', 'underscore', 'backbone', 'i18next', 'moment'], function($, _,
 		},
 
 		initialize : function() {
-			var self = this;
+			var self = this,
+				cacheBuster = module.config().cacheBuster;
+				
 			//init i18next
 			i18next.init({
 				ns : this.get('appName'),
@@ -15,8 +17,9 @@ define(['jquery', 'underscore', 'backbone', 'i18next', 'moment'], function($, _,
 				useCookie : true,
 				defaultNs : this.get('appName'),
 				fallbackLng : 'en',
+				cacheBuster : cacheBuster,
 				fallbackToDefaultNS : true,
-				resGetPath : 'bundle/__ns_____lng__.json'
+				resGetPath : 'bundle/__ns_____lng__.json' + (cacheBuster?('?v='+cacheBuster):'')
 			}).done(function() {
 				self.set({'lang': i18next.lng()},{silent: true});
 				self.apply();
