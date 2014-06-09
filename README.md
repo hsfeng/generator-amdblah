@@ -51,8 +51,8 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 
 
 ## Release History
-
- * 2014-02-11   v0.2.0   remove backbone.layoutmanager in default scaffold
+ * 2014-06-09   v0.2.1   Combines require.js into a main.js and add resource cache-busting
+ * 2014-02-11   v0.2.0   Remove backbone.layoutmanager in default scaffold
  * 2013-12-23   v0.1.0   Updating to support SlexAxton/require-handlebars-plugin v0.7.0.
 
 
