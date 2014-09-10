@@ -1,6 +1,6 @@
 # generator-amdblah
 
-A [Yeoman](http://yeoman.io) generator for starting a project with Express, RequireJS, Backbone.js + Handlebars both on server and client side, i18next, Moment.js and Bootstrap.
+A [Yeoman](http://yeoman.io) generator for starting a project with Express, RequireJS, Backbone+Marionette, Handlebars both on server and client side, i18next, Moment.js and Bootstrap.
 
 
 ## Getting Started
@@ -37,10 +37,15 @@ $ yo amdblah
 
 ### Run Application
 
-Launch the application
+Run development server
 
 ```shell
-$ grunt server
+$ grunt serve
+```
+
+### Build for production
+```shell
+$ grunt
 ```
 
 ### Getting To Know Yeoman
@@ -51,6 +56,7 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 
 
 ## Release History
+ * 2014-09-10   v0.3.0   Update dependencies and add Marionette to scaffolding
  * 2014-06-09   v0.2.1   Combines require.js into main.js and add resource cache-busting
  * 2014-02-11   v0.2.0   Remove backbone.layoutmanager in default scaffold
  * 2013-12-23   v0.1.0   Updating to support SlexAxton/require-handlebars-plugin v0.7.0.

@@ -3,7 +3,7 @@ require.config({
 	paths : {
 		'jquery' : '../bower_components/jquery/dist/jquery',
 		'backbone' : '../bower_components/backbone/backbone',
-		'underscore' : '../bower_components/underscore-amd/underscore',
+		'underscore' : '../bower_components/underscore/underscore',
 		'modernizr' : '../bower_components/modernizr/modernizr',
 		'templates' : '../templates',
 		'bower' : '../bower_components',
@@ -16,7 +16,11 @@ require.config({
 		'bootstrap' : '../bower_components/bootstrap/dist/js/bootstrap',
 		'moment' : '../bower_components/moment/min/moment.min',
 		'moment.langs' : 'libs/vendor/moment',
-		'i18next' : '../bower_components/i18next/i18next.amd.withJQuery.min'
+		'i18next' : '../bower_components/i18next/i18next.amd.withJQuery.min',
+
+		'marionette' : '../bower_components/backbone.marionette/lib/core/backbone.marionette',
+		'backbone.wreqr' : '../bower_components/backbone.wreqr/lib/backbone.wreqr',
+		'backbone.babysitter' : '../bower_components/backbone.babysitter/lib/backbone.babysitter',
 	},
 
 	shim : {
@@ -43,7 +47,7 @@ require.config({
 	}
 });
 
-require(['jquery', 'underscore', 'backbone', 'domready', 'i18next', 'moment', 'modernizr', 'underscore.string', 'bootstrap'], function($, _, Backbone, domReady) {'use strict';
+require(['jquery', 'underscore', 'backbone', 'domready', 'marionette', 'i18next', 'moment', 'modernizr', 'underscore.string', 'bootstrap'], function($, _, Backbone, domReady) {'use strict';
 	domReady(function() {
 		//init underscore.string
 		_.mixin(_.str.exports());

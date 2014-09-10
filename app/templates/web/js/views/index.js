@@ -1,24 +1,26 @@
 define(['jquery', 'underscore', 'backbone', 'hbs!templates/welcome'], function($, _, Backbone, welcomeTmpl) {'use strict';
 
-	var IndexView = Backbone.View.extend({
+	var IndexView = Backbone.Marionette.ItemView.extend({
 
-		el : '.container',
+		template : welcomeTmpl,
 
 		events : {
 
 		},
 
-		initialize : function() {
-			if(_.isBoolean(this.$el.data('rendered'))?!this.$el.data('rendered'):true){
-				console.log('render index view');
-				this.render();
-			}
+		onRender : function() {
+			console.log('index view is rendering.');
+			this.$el = this.$el.children();
+	        // Unwrap the element to prevent infinitely
+	        // nesting elements during re-render.
+	        this.$el.unwrap();
+	        this.setElement(this.$el);
 		},
-		render : function() {
-			var self = this;
-			this.$el.html(welcomeTmpl({
+
+		serializeData : function(){
+			return {
 				renderTime : new Date().getTime()
-			}));
+			};
 		}
 	});
 

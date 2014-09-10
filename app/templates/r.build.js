@@ -1,7 +1,7 @@
 module.exports = function(yeoman){
   // do something
   return {
-	
+
 		appDir : yeoman.app,
 		baseUrl : 'js',
 		dir : yeoman.dist,
@@ -18,9 +18,9 @@ module.exports = function(yeoman){
 		//useStrict: true,
 		//wrap: true,
 		skipDirOptimize : true,
-	
+
 		inlineText : true,
-	
+
 		pragmasOnSave : {
 			//removes Handlebars.Parser code (used to compile template strings) set
 			//it to `false` if you need to parse template strings even after build
@@ -30,27 +30,27 @@ module.exports = function(yeoman){
 			// removes i18n precompiler, handlebars and json2
 			excludeAfterBuild : true
 		},
-		
+
 		paths: {
 	    	requireLib: '../bower_components/requirejs/require'
 	    },
-	
+
 		mainConfigFile : yeoman.app + '/js/main.js',
 		modules : [
-		{ 
+		{
 			name : 'main',
 			include :  ['requireLib','models/lang'],
 		},
 		{
-			name : "app/index",
+			name : "apps/index",
 			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'bootstrap']
-		}, 
+		},
 		{
 			name : "views/index",
 			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'bootstrap']
-		}, 
+		},
 		{
-			name : "app/404",
+			name : "apps/404",
 			exclude : ['jquery', 'underscore', 'backbone', 'domready', 'underscore.string', 'bootstrap']
 		}
 		/*
@@ -60,5 +60,5 @@ module.exports = function(yeoman){
 		}
 		*/
 		]
-	}; 
+	};
 };

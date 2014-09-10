@@ -2,24 +2,20 @@ define(['jquery', 'underscore', 'backbone', 'module'], function($, _, Backbone, 
 
 	var AppRouter, initialize;
 
-	AppRouter = Backbone.Router.extend({
+	AppRouter = Backbone.Marionette.AppRouter.extend({
+
+		appRoutes : {
+			'welcome' : 'welcome',
+		},
 
 		routes : {
 			// Define some URL routes
 			// Default
-			'welcome' : 'welcome',
 			'*actions' : 'defaultAction'
 		},
 
 		initialize : function(options) {
 			console.log('init index router');
-		},
-
-		welcome : function() {
-			console.log('route welcome');
-			require(['views/index'], function(IndexView) {
-				new IndexView();
-			});
 		},
 
 		defaultAction : function(actions) {
@@ -30,8 +26,10 @@ define(['jquery', 'underscore', 'backbone', 'module'], function($, _, Backbone, 
 			});
 		}
 	});
-	initialize = function() {
-		new AppRouter();
+
+	initialize = function(ctl) {
+		
+		new AppRouter({ controller: ctl });
 
 		var pushState = false, pathParts = window.location.pathname.split('/');
 		pathParts = pathParts.slice(0, pathParts.length - 1);

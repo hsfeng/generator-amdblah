@@ -8,7 +8,7 @@ define(['jquery', 'underscore', 'backbone', 'module', 'i18next', 'moment'], func
 		initialize : function() {
 			var self = this,
 				cacheBuster = module.config().cacheBuster;
-				
+
 			//init i18next
 			i18next.init({
 				ns : this.get('appName'),
@@ -62,7 +62,7 @@ define(['jquery', 'underscore', 'backbone', 'module', 'i18next', 'moment'], func
 				}
 				momentLangs.push('moment.langs/' + currentLang);
 				require(momentLangs, function() {
-					moment.lang(currentLang);
+					moment.locale(currentLang);
 					self.applyTimestamp();
 				});
 			} else {

@@ -1,18 +1,21 @@
-<div class="page-header">
-	<h1><span data-i18n="hello">{{i18n_t "hello" i18next=i18n}}</span> <img style="vertical-align: baseline" src="img/logo.png"></h1>
-</div>
-	<p class="lead" data-i18n="this_is_html5_boilerplate">
-		{{i18n_t "this_is_html5_boilerplate" i18next=i18n}}
-	</p>
-	<p data-i18n="you_now_have">
-		{{i18n_t "you_now_have" i18next=i18n}}
-	</p>
-	{{> components}}
-	<p data-i18n="installed">
-		{{i18n_t "installed" i18next=i18n}}
-	</p>
-	<p>
-		<span data-i18n="this_page_rendered_at">{{i18n_t "this_page_rendered_at" i18next=i18n}}</span>
-		<span data-i18n-timestamp="{{renderTime}}" data-i18n-fromnow="true">{{dateFormat renderTime format="MMMM YYYY" fromNow=true moment=moment}}</span>.
-	</p>
+<div id="welcome">
+	<div class="page-header">
+		<h1><span data-i18n="hello">{{i18n_t "hello" i18next=i18n}}</span> <img style="vertical-align: baseline" src="img/logo.png"></h1>
+	</div>
+	<div>
+		<p class="lead" data-i18n="this_is_html5_boilerplate">
+			{{i18n_t "this_is_html5_boilerplate" i18next=i18n}}
+		</p>
+		<p data-i18n="you_now_have">
+			{{i18n_t "you_now_have" i18next=i18n}}
+		</p>
+		{{> components}}
+		<p data-i18n="installed">
+			{{i18n_t "installed" i18next=i18n}}
+		</p>
+		<p>
+			<span data-i18n="this_page_rendered_at">{{i18n_t "this_page_rendered_at" i18next=i18n}}</span>
+			<span data-i18n-timestamp="{{renderTime}}" data-i18n-fromnow="true">{{dateFormat renderTime format="MMMM YYYY" fromNow=true moment=moment}}</span>.
+		</p>
+	</div>
 </div>
