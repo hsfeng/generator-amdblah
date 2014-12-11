@@ -86,7 +86,7 @@ module.exports = function(grunt) {
 				cwd: '<%= yeoman.dist %>',
 				src: ['bower_components', 'build.txt', 'js/*.*', '!js/main.js',
 					'js/libs/{,*/}*', '!js/libs/vendor/**',
-					'js/app/{,*/}*', '!js/app/*.js',
+					'js/apps/{,*/}*', '!js/apps/*.js',
 					'js/views/{,*/}*', '!js/views/*.js',
 					'js/models',
 					'css/**/*.less'
