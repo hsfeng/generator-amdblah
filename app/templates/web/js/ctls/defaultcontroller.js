@@ -12,15 +12,15 @@ define(['jquery', 'underscore', 'backbone'],
 				var self = this,
 					v;
 				require([view], function(ViewClass) {
-					if (self.app.mainRegion.$el.attr('data-rendered')) {
-						if (!options) {
+					if('true' === self.app.mainRegion.$el.attr('data-rendered')) {
+						if(!options) {
 							options = {};
 						}
 						options.el = self.app.mainRegion.$el.children()[0];
 						console.log('attach view...');
 						v = new ViewClass(options);
 						self.app.mainRegion.attachView(v);
-						if (v.onShow) {
+						if(v.onShow) {
 							v.onShow();
 						}
 					} else {

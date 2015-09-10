@@ -56,7 +56,8 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 
 
 ## Release History
- * 2014-09-10   v0.3.1   Update dependencies and refine client/server rendering
+ * 2015-09-10   v0.3.2   Bug fixes
+ * 2014-12-16   v0.3.1   Update dependencies and refine client/server rendering
  * 2014-09-10   v0.3.0   Update dependencies and add Marionette to scaffolding
  * 2014-06-09   v0.2.1   Combines require.js into main.js and add resource cache-busting
  * 2014-02-11   v0.2.0   Remove backbone.layoutmanager in default scaffold
