@@ -28,6 +28,7 @@ define(['jquery', 'underscore', 'backbone'],
 						self.app.mainRegion.show(new ViewClass(options));
 					}
 					self.app.mainRegion.$el.removeAttr('data-rendered');
+					self.app.mainRegion.$el.removeClass('hide');
 				});
 			},
 

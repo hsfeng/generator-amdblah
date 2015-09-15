@@ -16,7 +16,7 @@ Basically, he wears a top hat, lives in your computer, and waits for you to tell
 Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
 
 ```
-$ npm install -g yo
+$ npm install -g yo grunt-cli
 ```
 
 ### Yeoman Generators
@@ -56,7 +56,7 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 
 
 ## Release History
- * 2015-09-10   v0.3.2   Bug fixes
+ * 2015-09-15   v0.3.2   Patch released. Bug fixes, Node v4.0.0 compatibility
  * 2014-12-16   v0.3.1   Update dependencies and refine client/server rendering
  * 2014-09-10   v0.3.0   Update dependencies and add Marionette to scaffolding
  * 2014-06-09   v0.2.1   Combines require.js into main.js and add resource cache-busting
