@@ -56,6 +56,7 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 
 
 ## Release History
+ * 2016-03-22   v0.3.4   Patch released. Bug fixes
  * 2015-10-07   v0.3.3   Patch released. Bug fixes, yeoman version compatibility
  * 2015-09-15   v0.3.2   Patch released. Bug fixes, Node v4.0.0 compatibility
  * 2014-12-16   v0.3.1   Update dependencies and refine client/server rendering
